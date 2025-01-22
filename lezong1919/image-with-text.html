@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片文字叠加</title>
+    <style>
+        .container {
+            position: relative;
+            width: fit-content;
+        }
+        .text-overlay {
+            position: absolute;
+            color: white;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.5;
+        }
+        .top-right {
+            top: 20px;
+            right: 20px;
+            text-align: right;
+        }
+        .bottom-left {
+            bottom: 20px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="img/801922593_-1103295535_-314423218.webp" width="100%" alt="WeChat" />
+        <img src="img/1061946401_213915017_-1405223060.webp" alt="背景图片">
+        <div class="text-overlay top-right">
+            0元加人久鼎私域带货<br>
+            专业培训 顶尖平台 海量资源<br>
+            一流服务 优质产品
+        </div>
+        <div class="text-overlay bottom-left">
+            财富尽在掌握之中<br>
+            赋能人人自建流量渠道
+        </div>
+    </div>
+</body>
+</html>
