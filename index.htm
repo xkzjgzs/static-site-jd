@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>页面跳转</title>
+    <script>
+        // 获取URL参数
+        function getParameterByName(name) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(window.location.href);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // 检查目录是否存在
+        function directoryExists(dir) {
+            try {
+                const xhr = new XMLHttpRequest();
+                xhr.open('HEAD', dir, false);
+                xhr.send();
+                return xhr.status !== 404;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        // 主逻辑
+        const wechatId = getParameterByName('wechat_id');
+        const defaultDir = 'lxm503527381';
+        const targetDir = wechatId && directoryExists(wechatId) ? wechatId : defaultDir;
+        
+        // 跳转
+        window.location.href = targetDir + '/index.html';
+    </script>
+</head>
+<body>
+    <p>跳转中...</p>
+</body>
+</html>

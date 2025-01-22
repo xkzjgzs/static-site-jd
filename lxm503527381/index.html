@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晓晓|私域🔝0投·对接团队</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/icon-font.css">
+</head>
+<body>
+    <header class="header-container">
+        <div class="header-left">
+            <img src="img/456830cab8ca788c89a343161b0d207f_1.jpg" alt="Logo" class="header-logo">
+        </div>
+        <div class="header-right">
+            <div class="header-title">久鼎私域运营</div>
+            <div class="header-subtitle">资质认证</div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="wechat-row">
+                <span>添加（晓晓）微信好友了解</span>
+                <button class="wechat-btn">
+                    <img src="img/wechat_logo.png" alt="WeChat">
+                    添加微信
+                </button>
+            </div>
+            <div class="wechat-row">
+                <img src="img/-1877304385_624133947_-1418619192.jpg" width="100%" alt="WeChat" />
+            </div>
+            <div class="wechat-row">
+                <img src="img/-1465430507_930039696_-168332384.jpg" width="100%" alt="WeChat" />
+            </div>
+            <div class="wechat-row">
+                <img src="img/904180492_-377929235_-250853259.jpg" width="100%" alt="WeChat" />
+            </div>
+            <div class="wechat-row">
+                <img src="img/464092575_2106795156_1077812505.jpg" width="100%" alt="WeChat" />
+            </div>
+            <div class="footer-info">
+                <p>© 2025 久鼎私域运营 版权所有</p>
+                <p>技术支持：星空之家工作室</p>
+                <p>
+                    <i data-v-25efb6b0="" class="icon-safeguarding-rights guarantee-icon-new">协助维权</i>
+                    <i data-v-25efb6b0="" class="icon-false-compensation guarantee-icon-new">虚假赔偿</i>
+                    <i data-v-25efb6b0="" class="icon-fraud-compensation guarantee-icon-new">欺诈赔偿</i>
+                </p>
+            </div>
+        </section>
+    </main>
+    <div class="floating-footer">
+        <div class="floating-footer-content">
+            <div class="wechat-info">
+                <img src="img/wechat_logo.png" height="26px" alt="WeChat">
+                <span>添加微信好友了解</span>
+            </div>
+            <button class="wechat-btn">
+                <img src="img/wechat_logo.png" alt="WeChat">
+                添加微信
+            </button>
+        </div>
+    </div>
+    <footer>
+    </footer>
+
+    <!-- 微信弹窗 -->
+    <div class="wechat-modal-overlay">
+        <div class="wechat-modal">
+            <div class="wechat-modal-close">×</div>
+            <img src="img/wechat_success_icon.png" alt="Success" class="wechat-modal-icon">
+            <div class="wechat-modal-text">复制成功</div>
+            <div class="wechat-modal-id">微信号: lxm503527381</div>
+            <div class="wechat-modal-tip">添加微信好友，详细了解久鼎私域</div>
+            <button class="wechat-modal-confirm">我知道了</button>
+        </div>
+    </div>
+
+    <!-- 隐藏的复制输入框 -->
+    <textarea id="copyInput" style="position: absolute; left: -9999px;"></textarea>
+
+    <script>
+        // 显示微信弹窗
+        function showWechatModal() {
+            document.querySelector('.wechat-modal-overlay').style.display = 'flex';
+        }
+
+        // 隐藏微信弹窗
+        function hideWechatModal() {
+            document.querySelector('.wechat-modal-overlay').style.display = 'none';
+        }
+
+        // 复制微信号
+        function copyWechatId() {
+            const wechatId = 'lxm503527381';
+            
+            // 优先使用现代API
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(wechatId).then(() => {
+                    showWechatModal();
+                }).catch(() => {
+                    fallbackCopy(wechatId);
+                });
+            } else {
+                fallbackCopy(wechatId);
+            }
+        }
+
+        // 兼容性复制方案
+        function fallbackCopy(text) {
+            const copyInput = document.getElementById('copyInput');
+            copyInput.value = text;
+            copyInput.select();
+            copyInput.setSelectionRange(0, 99999); // 兼容移动端
+            try {
+                document.execCommand('copy');
+                showWechatModal();
+            } catch (err) {
+                alert('无法复制微信号，请手动复制：' + text);
+            }
+        }
+
+        // 绑定事件
+        document.querySelectorAll('.wechat-btn').forEach(btn => {
+            btn.addEventListener('click', copyWechatId);
+        });
+
+        document.querySelector('.wechat-modal-close').addEventListener('click', hideWechatModal);
+        document.querySelector('.wechat-modal-confirm').addEventListener('click', hideWechatModal);
+    </script>
+</body>
+</html>
