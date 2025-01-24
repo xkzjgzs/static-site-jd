@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://site-jd.netlify.app</loc>
-		<priority>0.75</priority>
+		<priority>0.751</priority>
 		<lastmod>2025-01-23</lastmod>
 	</url>
 	<url>
 		<loc>https://site-jd.netlify.app/lxm503527381</loc>
-		<priority>0.50</priority>
+		<priority>0.9</priority>
 		<lastmod>2025-01-23</lastmod>
 	</url>
 	<url>
 		<loc>https://site-jd.netlify.app/lxm503527381/index.html</loc>
-		<priority>0.50</priority>
+		<priority>0.9</priority>
 		<lastmod>2025-01-23</lastmod>
 	</url>
 	<url>
 		<loc>https://site-jd.netlify.app/lezong1919</loc>
-		<priority>0.50</priority>
+		<priority>0.9</priority>
 		<lastmod>2025-01-23</lastmod>
 	</url>
 </urlset>
