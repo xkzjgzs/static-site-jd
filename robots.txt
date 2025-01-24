@@ -3,4 +3,5 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 
-Sitemap: https://site-jd1.maozi.io/sitemap.xml
+Sitemap: https://site-jd.netlify.app/sitemap.xml
+Sitemap: https://site-jd1.maozi.io/sitemap1.xml
