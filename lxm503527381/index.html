@@ -73,8 +73,60 @@
       }
     }
     </script>
+    <style>
+        @keyframes flash {
+            30%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .header-left img{
+            animation: flash 1s infinite;
+        }
+
+        .header-subtitle {
+            color: red;
+            animation: flash 1s infinite;
+        }
+    </style>
+    </style>
 </head>
 <body>
+    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.1.0-beta.3/libs/cn/index.js"></script>
+    <script>
+        var chatBot = new CozeWebSDK.WebChatClient({
+            config: {
+                bot_id: '7465984803625058304',
+            },
+            auth:{
+                type:'token',
+                token: 'pat_Y3BcZXzqsdwIyOicPXL7EB9j41QkTR4KLJzpNCATVymvkdWdvh1twfGXl7SwyP4h',
+                onRefreshToken: () => 'pat_Y3BcZXzqsdwIyOicPXL7EB9j41QkTR4KLJzpNCATVymvkdWdvh1twfGXl7SwyP4h',
+            },
+            ui: {
+                base: {
+                    icon: 'https://site-jd.netlify.app/lxm503527381/img/wechat_logo.png'
+                },
+                asstBtn: {
+                    isNeed: false,
+                },
+                footer: {
+                    isShow: true,
+                    expressionText: 'Powered by {{name}}',
+                    linkvars: {
+                        name: {
+                            text: '星空之家工作室',
+                            link: 'https://xkzjgzs.netlify.app'
+                        }
+                    }
+                },
+                chatBot: {
+                    width: '90%',
+                    title: "智能客服",
+                    uploadable: false
+                },
+            }
+        });
+    </script>
     <header class="header-container">
         <div class="header-left">
                 <img src="img/456830cab8ca788c89a343161b0d207f_1.jpg"
@@ -83,8 +135,8 @@
                         loading="lazy">
         </div>
         <div class="header-right">
-            <div class="header-title">久鼎私域运营</div>
-            <div class="header-subtitle">资质认证</div>
+            <div class="header-title">久鼎私域运营【资质认证】</div>
+            <div class="header-subtitle"><--点我进行智能咨询</div>
         </div>
     </header>
     <main>
@@ -274,7 +326,10 @@
         }
 
         // 绑定资质认证点击事件
-        document.querySelector('.header-container').addEventListener('click', showCertificationModal);
+        //document.querySelector('.header-container').addEventListener('click', showCertificationModal);
+        document.querySelector('.header-right').addEventListener('click', showCertificationModal);
+        document.querySelector('.header-left').addEventListener('click', function() {chatBot.showChatBot();});
+        
         document.querySelector('.certification-modal-close').addEventListener('click', hideCertificationModal);
     </script>
 </body>
